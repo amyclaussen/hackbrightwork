@@ -1,9 +1,12 @@
+shoplist = []
+
 def add_item(shoplist):
     item = raw_input("Which item would you like to add? ").lower()
     if item in shoplist:
         print "This item is already in the list."
     else:
         shoplist.append(item)
+        print "Added to list:", item
 
 def remove_item(shoplist):
     item = raw_input("Which item would you like to remove? ").lower()
@@ -11,19 +14,34 @@ def remove_item(shoplist):
         print "This item is not in the list."
     else:
         shoplist.remove(item)
+        print "Removed from list:", item
+
+def menu():
+    while True:
+        print ""
+        print "Select a Menu Option:"
+        print "     1 - Show Current List"
+        print "     2 - Add Item"
+        print "     3 - Remove Item"
+        print "     4 - Quit"
+        choice = raw_input("-->  ")
+        if choice not in ["1","2","3","4"]:
+            print "'" + str(choice) + "' was not a menu item."
+        else:
+            return int(choice)
 
 def main():
-    shoplist = []
     choice = None
-    while choice != "quit":
-        choice = raw_input("Do you want to add or remove something to the list? (Type 'quit' to exit.) ").lower()
-        if choice == "add":
+    while choice != 4:
+        choice = menu()
+        if choice == 1:
+            print shoplist
+        elif choice == 2:
             add_item(shoplist)
-        elif choice == "remove":
+        elif choice == 3:
             remove_item(shoplist)
         else:
-            print "Only add or remove were options."
-        print "Your current shopping list is:", shoplist
+            print "Goodbye."
 
 if __name__ == '__main__':
     main()

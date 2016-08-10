@@ -25,17 +25,33 @@ def divisible():
 def sum_of_int():
     summation = 0
     index = 0
-    a = raw_input("What do you want the starting number to be? (Must be positive integer and less than 15,000.) ")
-    if a.isdigit() and 0 < a < 15000:
-        b = raw_input("What do you want the ending number to be? (Must be more that the starting number and less than or equal to 15,000.) ")
-        if b.isdigit() and a < b < 15001:
-                for i in range(a,b + 1):
-                    if i % 2 == 1:
-                        summation += i
-                    index += 1
-    else:
-        print "Please reenter a valid number."
-    return summation
+
+    while True:
+        a = raw_input("What do you want the starting number to be? (Must be positive integer and less than 15,000.) ")
+        if a.isdigit() and 0 < a < 15000:
+            a = int(a)
+
+
+
+            #########
+            
+            b = raw_input("What do you want the ending number to be? (Must be more that the starting number and less than or equal to 15,000.) ")
+            if b.isdigit() and a < b < 15001:
+                b = int(b)
+        else:
+            print "Please reenter a valid number."
+
+            # while index < len(range(a,b + 1)):
+            for i in range(a,b + 1):
+                if i % 2 == 1:
+                    summation += i
+                index += 1
+                if index == len(range(a,b+1)):
+                    break
+        return summation
+
+    
+    
 
 #entering anything other than an int breaks it
 

@@ -7,8 +7,16 @@ def checkprime(num):
 		print num, "is prime."
 
 def main():
-	checkprime_num = int(raw_input("Which number would you like to check if it is prime? "))
-	checkprime(checkprime_num)
+	checkprime_num = 0
+	while checkprime_num != "q":
+		checkprime_num = raw_input("Which number would you like to check if it is prime? Type q to quit. ")
+		if checkprime_num == "q":
+			break
+		else:
+			try:
+				checkprime(int(checkprime_num))
+			except:
+				print "Please enter a valid integer."
 
 if __name__ == '__main__':
 	main()

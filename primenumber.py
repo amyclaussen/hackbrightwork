@@ -8,7 +8,7 @@ def checkprime(num):
 
 def main():
 	checkprime_num = 0
-	while checkprime_num != "q":
+	while True:
 		checkprime_num = raw_input("Which number would you like to check if it is prime? Type q to quit. ")
 		if checkprime_num == "q":
 			break

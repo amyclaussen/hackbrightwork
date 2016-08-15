@@ -1,4 +1,6 @@
 shoplist = {"main":["eggs","cheese"]}
+# shoplist["main"].remove("cheese")
+# print shoplist["main"]
 
 def show_specific_list(name_of_list):
     print shoplist[raw_input("Which list would you like to view? ").lower()]
@@ -27,9 +29,8 @@ def remove_item(shoplist):
     if name_item not in shoplist[name_list]:
         print "This item is not in the list."
     else:
-        for i in shoplist.itervalues():
-            i.remove(name_item)
-            print "Removed from " + name_list
+        shoplist[name_list].remove(name_item)
+        print "Removed from " + name_list + ": " + name_item
 
 def remove_list(shoplist):
     name_list = raw_input("Which list would you like to remove? ").lower()

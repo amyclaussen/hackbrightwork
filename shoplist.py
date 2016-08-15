@@ -1,7 +1,6 @@
-shoplist = {"main":["eggs"]}
+shoplist = {"main":["eggs","cheese"]}
 
-def show_specific_list(shoplist):
-    print "Current lists are:", shoplist.keys()
+def show_specific_list(name_of_list):
     print shoplist[raw_input("Which list would you like to view? ").lower()]
 
 def add_list(shoplist):
@@ -23,16 +22,20 @@ def remove_item(shoplist):
     print "Current lists are:", shoplist.keys()
     name_list = raw_input("Which list would you like to remove from? ").lower()
     print "Current items are:", shoplist[name_list]
-    name_item = raw_input("Which item would you like to remove? ").lower()
-    name_item_for_print = name_item
-    if name_item not in shoplist[name_list]:
-        print "This item is not in the list."
+
+
+# BREAKING sad face
+
+    # name_item = raw_input("Which item would you like to remove? ").lower()
+    # name_item_for_print = name_item
+    # if name_item not in shoplist[name_list]:
+    #     print "This item is not in the list."
     # else:
-    #     for i in shoplist[name_list]:
-    #         if i == name_item:
-    #             name_list.remove(name_item)
-    #             #'str' object has no attribute 'remove'
-    #     print "Removed from " + name_list + ": " + name_item_for_print
+    #     for i in shoplist.itervalues():
+    #         i.remove(name_item)
+    #         print "Removed from " + name_list + ": " + 
+
+        # shoplist[name_list].index(name_item)
 
 def remove_list(shoplist):
     name_list = raw_input("Which list would you like to remove? ").lower()
@@ -62,6 +65,7 @@ def main():
         if choice == 1:
             print shoplist
         elif choice == 2:
+            print "Current lists are:", shoplist.keys()
             show_specific_list(shoplist)
         elif choice == 3:
             add_list(shoplist)

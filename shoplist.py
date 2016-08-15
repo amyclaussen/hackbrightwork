@@ -22,20 +22,14 @@ def remove_item(shoplist):
     print "Current lists are:", shoplist.keys()
     name_list = raw_input("Which list would you like to remove from? ").lower()
     print "Current items are:", shoplist[name_list]
-
-
-# BREAKING sad face
-
-    # name_item = raw_input("Which item would you like to remove? ").lower()
-    # name_item_for_print = name_item
-    # if name_item not in shoplist[name_list]:
-    #     print "This item is not in the list."
-    # else:
-    #     for i in shoplist.itervalues():
-    #         i.remove(name_item)
-    #         print "Removed from " + name_list + ": " + 
-
-        # shoplist[name_list].index(name_item)
+    name_item = raw_input("Which item would you like to remove? ").lower()
+    name_item_for_print = name_item
+    if name_item not in shoplist[name_list]:
+        print "This item is not in the list."
+    else:
+        for i in shoplist.itervalues():
+            i.remove(name_item)
+            print "Removed from " + name_list
 
 def remove_list(shoplist):
     name_list = raw_input("Which list would you like to remove? ").lower()

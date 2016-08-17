@@ -1,9 +1,7 @@
 shoplist = {"main":["eggs","cheese"]}
-# shoplist["main"].remove("cheese")
-# print shoplist["main"]
 
-def show_specific_list(name_of_list):
-    print shoplist[raw_input("Which list would you like to view? ").lower()]
+def show_specific_list(name_list):
+    return shoplist[name_list]
 
 def add_list(shoplist):
     name_list = raw_input("Which list would you like to add? ").lower()
@@ -61,7 +59,8 @@ def main():
             print shoplist
         elif choice == 2:
             print "Current lists are:", shoplist.keys()
-            show_specific_list(shoplist)
+            name_list = raw_input("Which list would you like to view? ").lower()
+            print show_specific_list(name_list)
         elif choice == 3:
             add_list(shoplist)
         elif choice == 4:

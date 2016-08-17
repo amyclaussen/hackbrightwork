@@ -1,1 +1,59 @@
 CSV to JSON (and Visa Versa)
+
+LARGER GOAL
+Ability to mass input many pieces of data into a JSON file
+
+REQUIREMENTS
+- takes data input fields and translates them to columns in a csv, also recording which level in the data is
+- once additional rows are added in the csv, can transfer that back into a JSON in the original format
+- can both replace or append data
+
+FLOW
+- use existing JSON file to export data
+- export the fields to a CSV
+- fill in the CSV manually
+- if nothing in a cell, don’t put field into JSON
+- recognize and cast types correctly
+- export JSON file, updating the original file
+
+
+PSEUDO-CODE
+- Export Function
+    - User input: what is the path of the JSON file?
+        - if valid, continue
+            - import all data from JSON
+                - do it in a way that retains types and levels
+            - create new CSV file with name of JSON file but with CSV extension on the desktop
+            	-if already exists, prompt user if they want to replace it
+            - export all data types into CSV column
+                - if entry has a data type the previous ones didn’t have, include it in order
+            - export all entries into CSV rows
+                - if entry does not include data type, export nothing in cell
+            - if successful
+                - print that it was successful
+            - else
+                - print it was unsuccessful
+        - if not valid path, prompt again
+- (user updates CSV manually)
+- Import Function
+		-if already exists, prompt if user wants to replace
+    - export CSV to JSON, retaining types
+        - columns define data types and level
+        - rows define entries
+    - if successful
+        - print that it was successful
+    - else
+        - print it was unsuccessful
+- (user manually copies and pastes into the JSON file)
+
+
+FUNCTIONALITY
+
+- read CSV
+- export and import from JSON/CSV while retaining types and levels
+- use data in CSV to export to certain indentation and characters in JSON
+- if CSV cell is empty, don’t make line in JSON
+- how to write a new file
+- how to read from a file
+- how to take name of existing file and make a new file with modified name
+- lots of string parsing

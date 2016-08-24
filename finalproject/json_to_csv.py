@@ -5,14 +5,17 @@ import csv
 def read_json_to_dictionary(json_file):
 	with open(json_file) as json_data:
 		data = json.load(json_data)
-		for i in data:
-			print i["topping"]
+		return data
 
-def write_keys_to_columns():
-	pass
+def write_keys_to_columns(data):
+	keylist = data.keys
 
-def write_data_to_rows()
+def write_data_to_rows():
 	pass
 
 def main():
-	read_json_to_dictionary("cake.json")
+	print read_json_to_dictionary("cake.json")
+	#print write_keys_to_columns(data)
+
+if __name__ == '__main__':
+	main()
